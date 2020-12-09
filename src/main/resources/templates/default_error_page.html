@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Fraunhofer IEM</title>
+        <style>
+            body {
+                height:900px;
+                background-image: linear-gradient(black, #2e2e1f, black);
+            }
+            .centered {
+                left: 0;
+                line-height: 200px;
+                margin-top: -100px;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                width: 100%;
+            }
+            .heading {
+                font-family:    Rockwell;
+                font-size:      66px;
+
+                color:          White;
+            }
+            .sub-heading {
+                font-family:    Rockwell;
+                font-size:      18px;
+                color: white;
+            }
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                color: white;
+                text-align: right;
+                font-size:      14px;
+                font-weight:    bold;
+            }
+        </style>
+    </head>
+    <body>
+
+        <div class="heading centered" style="top: 45%;">
+            Error Occurred!
+        </div>
+
+        <p class="sub-heading centered">
+            Standard error page.
+        </p>
+
+        <!-- Footer -->
+        <p class="footer">[<span th:text="${status}">status</span>] <span th:text="${error}">error</span></p>
+
+    </body>
+</html>

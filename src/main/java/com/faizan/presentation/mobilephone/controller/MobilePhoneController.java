@@ -1,5 +1,6 @@
 package com.faizan.presentation.mobilephone.controller;
 
+import com.faizan.presentation.common.exception.PhoneNotFoundException;
 import com.faizan.presentation.mobilephone.data.entity.MobilePhone;
 import com.faizan.presentation.mobilephone.data.repository.MobilePhoneRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,6 +29,12 @@ public class MobilePhoneController {
     public Iterable findAll() {
         return repo.findAll();
     }
+    @GetMapping("/{id}")
+    public Optional<MobilePhone> findOne(@PathVariable Long id) {
+
+        repo.findById(id).orElseThrow(PhoneNotFoundException::new);
+        return repo.findById(id);
+    }
     //READ
     @GetMapping("/make/{make}/model/{model}")
     public List<MobilePhone> findByMakeAndModel(@PathVariable String make, @PathVariable String model) {
@@ -48,6 +55,7 @@ public class MobilePhoneController {
     //DELETE
     @DeleteMapping("/delete/{id}")
     public void delete(@PathVariable Long id) {
+        repo.findById(id);
         repo.deleteById(id);
     }
 

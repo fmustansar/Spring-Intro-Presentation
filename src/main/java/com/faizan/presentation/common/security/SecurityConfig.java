@@ -1,4 +1,4 @@
-package com.faizan.presentation.security;
+package com.faizan.presentation.common.security;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
