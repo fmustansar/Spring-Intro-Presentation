@@ -1,9 +1,18 @@
 package com.faizan.presentation.dependencyinjection.mobilephone.impl.processor;
 
-public class SamsungMicroProcessor {
+import com.faizan.presentation.dependencyinjection.mobilephone.type.Processor;
+import org.springframework.stereotype.Component;
 
+@Component
+public class SamsungMicroProcessor implements Processor {
 
-    public void processRequest() {
-        System.out.println();
+    @Override
+    public String name() {
+        return "Samsung";
+    }
+
+    @Override
+    public String returnSpeed() {
+        return "2.1 GHZ";
     }
 }
