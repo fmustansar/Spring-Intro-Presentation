@@ -14,6 +14,7 @@ public class HelloController {
     @Value("${event.owner}")
     String company;
 
+
     @GetMapping("/")
     public String homePage(Model model) {
 
